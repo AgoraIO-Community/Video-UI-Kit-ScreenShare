@@ -11,7 +11,7 @@ import AgoraUIKit
 import AgoraAppGroupDataHelper
 import ReplayKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AgoraVideoViewerDelegate {
 
     var agoraView: AgoraVideoViewer! = nil
 
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             connectionData: AgoraConnectionData(
                 appId: "<#App ID#>",
                 rtcToken: <#App Token or nil#>
-            )
+            ), delegate: self
         )
 
         agoraView.fills(view: self.view)
